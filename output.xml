@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-12-08T09:13:23.677892" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="D:\AutomationLearning\RobotFramework\Project1\TestCases.robot">
+<test id="s1-t1" name="Open Browser to launch url" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:24.807724" level="INFO">Opening browser 'Chrome' to base url 'https://www.guru99.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-08T09:13:24.807724" elapsed="13.830030"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-08T09:13:38.640245" elapsed="0.305625"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T09:13:43.948126" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T09:13:38.947871" elapsed="5.000255"/>
+</kw>
+<status status="PASS" start="2024-12-08T09:13:24.807724" elapsed="19.141403"/>
+</test>
+<test id="s1-t2" name="Verify the Title" line="19">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:44.034455" level="INFO">Element '(//img[@class='custom-logo' and @alt='Guru99'])[1]' is displayed.</msg>
+<arg>(//img[@class='custom-logo' and @alt='Guru99'])[1]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T09:13:43.952127" elapsed="0.082328"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:44.087453" level="INFO">Element '//a[@href='/' and text()='Home']' is displayed.</msg>
+<arg>//a[@href='/' and text()='Home']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T09:13:44.035451" elapsed="0.052002"/>
+</kw>
+<status status="PASS" start="2024-12-08T09:13:43.951197" elapsed="0.138256"/>
+</test>
+<test id="s1-t3" name="Navigate to JUnit" line="24">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:44.146252" level="INFO">Element '//a[@href='/software-testing.html']' is displayed.</msg>
+<arg>//a[@href='/software-testing.html']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T09:13:44.092459" elapsed="0.053793"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:44.148250" level="INFO">Clicking element '//a[@href='/software-testing.html']'.</msg>
+<arg>//a[@href='/software-testing.html']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T09:13:44.148250" elapsed="0.270828"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T09:13:49.419212" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T09:13:44.419078" elapsed="5.000134"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:49.470794" level="INFO">Element '//ul[@class='sub-menu clicked']//a[text()='JUnit' and @href='/junit-tutorial.html']' is displayed.</msg>
+<arg>//ul[@class='sub-menu clicked']//a[text()='JUnit' and @href='/junit-tutorial.html']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T09:13:49.420512" elapsed="0.050939"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T09:13:49.473445" level="INFO">Clicking element '//ul[@class='sub-menu clicked']//a[text()='JUnit' and @href='/junit-tutorial.html']'.</msg>
+<arg>//ul[@class='sub-menu clicked']//a[text()='JUnit' and @href='/junit-tutorial.html']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T09:13:49.472450" elapsed="9.894687"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T09:14:04.369878" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T09:13:59.369134" elapsed="5.001286"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navigated to JUnit Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-12-08T09:14:04.371928" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-08T09:13:44.090449" elapsed="20.285518"/>
+</test>
+<status status="PASS" start="2024-12-08T09:13:23.687757" elapsed="40.700529"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
