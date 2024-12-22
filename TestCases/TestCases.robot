@@ -10,18 +10,18 @@ ${BROWSER}        Chrome
 
 *** Test Cases ***
 
-Open Browser to launch url
+Case1. Open Browser to launch url
 
     Open Browser   ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     sleep   5s
 
-Verify the Title
+Case2. Verify the Title
 
     Element Should Be Visible   (//img[@class='custom-logo' and @alt='Guru99'])[1]
     Element Should Be Visible   //a[@href='/' and text()='Home']
 
-Navigate to JUnit
+Case3. Navigate to JUnit
 
     Element Should Be Visible   //a[@href='/software-testing.html']
     Click Element   //a[@href='/software-testing.html']
@@ -30,3 +30,11 @@ Navigate to JUnit
     Click Element   //ul[@class='sub-menu clicked']//a[text()='JUnit' and @href='/junit-tutorial.html']
     sleep   5s
     Log to Console      Navigated to JUnit Successfully
+
+Case4. Verify Page entry Title Text
+    
+    Element Should Be Visible   //*[@id="post-862"]//h1
+    ${enteryTitle}=  Get Text     //*[@id="post-862"]//h1
+    Log To Console    ${enteryTitle}
+    Element Text Should Be    //*[@id="post-862"]//h1    JUnit Tutorial for Beginners: Learn in 3 Days
+    Log To Console     Verify Page entry Title Text
