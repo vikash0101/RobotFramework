@@ -56,8 +56,9 @@ pipeline {
                 }
             }
         }
-        Stage('Insite RobotFramework'){
-            dir('RobotFrameork/my_new_directory/RobotFramework'){
+        Stage('InsideRobotFramework'){
+            steps{
+                dir('RobotFrameork/my_new_directory/RobotFramework'){
                 echo 'executing bat command'
                 bat '''
                     @echo off
@@ -65,6 +66,7 @@ pipeline {
                     pause
                     '''
                 echo 'bat command executed'
+                }
             }
         }
     }
