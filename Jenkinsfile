@@ -49,19 +49,8 @@ pipeline {
                     script{
                     def currentDir = pwd()
                     echo "Current directory is: ${currentDir}"
-                    cp -Rp directory/* my_new_directory/
+                    //cp -Rp directory/* my_new_directory/
                     }
-                }
-
-
-                // sh "mkdir -p my_new_directory"
-                // echo 'created my_new_directory'
-                // script{
-                //     def currentDir = pwd()
-                //     echo "Current directory: ${currentDir}"                
-                //     sh ""
-                //     sh "ls -la"
-                //     echo 'done'
                 }
             }
         }
