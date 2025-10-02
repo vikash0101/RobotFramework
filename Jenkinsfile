@@ -61,7 +61,7 @@ pipeline {
                 dir('my_new_directory'){
                 echo 'executing bat command'
                 bat '''
-                    dir
+                    dir /s /b
                     '''
                 echo 'bat command executed'
                 }
