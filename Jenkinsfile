@@ -9,7 +9,7 @@ pipeline {
                 }
                 echo 'mkdir -p my_new_directory'
                 //sh "mkdir -p my_new_directory"
-                sh 'echo "Current directory from shell: $(pwd)"'
+                //sh 'echo "Current directory from shell: $(pwd)"'
                 dir('my_new_directory'){
                     git(url: 'https://github.com/vikash0101/RobotFramework.git/', 
                     branch: 'main',
