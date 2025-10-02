@@ -10,7 +10,7 @@ pipeline {
                     branch: 'main',
                     credentialsId: 'myToken')
                     echo "Git project clone is success"
-                    def currentDir = pwd()
+                    def @currentDir = pwd()
                     echo "Current directory: ${currentDir}"
                 }
                 // script {
