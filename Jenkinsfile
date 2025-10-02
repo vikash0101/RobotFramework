@@ -4,12 +4,14 @@ pipeline {
         stage('Fetch git Project') {
             steps {
                 echo 'mkdir -p my_new_directory'
-                sh "mkdir -p my_new_directory"
+                //sh "mkdir -p my_new_directory"
                 dir('my_new_directory'){
                     git(url: 'https://github.com/vikash0101/RobotFramework.git/', 
                     branch: 'main',
                     credentialsId: 'myToken')
                     echo "Git project clone is success"
+                    def currentDir = pwd()
+                    echo "Current directory: ${currentDir}"
                 }
                 // script {
                 //     //sh "mkdir -p my_new_directory"
