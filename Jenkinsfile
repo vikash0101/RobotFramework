@@ -30,8 +30,8 @@ pipeline {
                 script{
                     def currentDir = pwd()
                     echo "Current directory: ${currentDir}"                
-                    cp -R RobotFramework/ my_new_directory/
-                    ls -la
+                    sh "cp -Rp RobotFramework/* my_new_directory/"
+                    sh "ls -la"
                     echo 'done'
                 }
             }
