@@ -4,7 +4,8 @@ pipeline {
         stage('Fetch git Project') {
             steps {
                 script {
-                    dir('my_project_clone'){
+                    sh "mkdir -p my_new_directory"
+                    dir('my_new_directory'){
                     echo "The selected cli value is: ${params.cli}"
                     git(url: 'https://github.com/vikash0101/RobotFramework.git/', 
                     branch: 'main',
@@ -14,7 +15,7 @@ pipeline {
                     echo "Current directory: ${currentDir}"
                     // ls -la
                     // echo 'listed'
-                    sh "mkdir -p my_new_directory"
+                    //sh "mkdir -p my_new_directory"
                     // echo 'my_new_directory created'
                     // def currentDir = pwd()
                     // echo "Current directory: ${currentDir}"
