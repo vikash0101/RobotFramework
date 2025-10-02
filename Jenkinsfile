@@ -14,7 +14,7 @@ pipeline {
                     echo "Current directory: ${currentDir}"
                     // ls -la
                     // echo 'listed'
-                    // mkdir -p my_new_directory
+                    sh "mkdir -p my_new_directory"
                     // echo 'my_new_directory created'
                     // def currentDir = pwd()
                     // echo "Current directory: ${currentDir}"
