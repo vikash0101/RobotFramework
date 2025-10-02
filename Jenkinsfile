@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'Linux'}
     stages {
         stage('Fetch git Project') {
             steps {
