@@ -11,10 +11,9 @@ pipeline {
                 //sh "mkdir -p my_new_directory"
                 //sh 'echo "Current directory from shell: $(pwd)"'
                 dir('directory'){
-                    git(url: 'https://github.com/vikash0101/RobotFramework.git/', 
-                    branch: 'main',
-                    credentialsId: 'myToken')
+                    git branch: 'main', credentialsId: 'myToken', url: 'https://github.com/vikash0101/RobotFramework.git'
                     echo "Git project clone is success"
+                    fileExists 'Config/conf.yaml'
                     //sh 'echo "Current directory from shell: $(pwd)"'
                     script {
                     def currentDir = pwd()
@@ -55,6 +54,17 @@ pipeline {
                     echo 'listed'
                     }
                 }
+            }
+        }
+        Stage('Insite RobotFramework'){
+            dir('RobotFrameork/my_new_directory/RobotFramework'){
+                echo 'executing bat command'
+                bat '''
+                    @echo off
+                    dir
+                    pause
+                    '''
+                echo 'bat command executed'
             }
         }
     }
