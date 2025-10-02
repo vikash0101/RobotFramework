@@ -1,23 +1,7 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-        stage('Build Docker Image') {
+        stage('Fetch git Project') {
             steps {
                 script {
                     dir('my_project_clone'){
@@ -36,6 +20,14 @@ pipeline {
                     // echo "Current directory: ${currentDir}"
                     }
                 }
+            }
+        }
+        stage('Copy Git Repo'){
+            steps{
+                sh mkdir -p my_new_directory
+                sh 'cp -R RobotFramework/ my_new_directory/'
+                sh ls -la
+                echo 'done'
             }
         }
     }
