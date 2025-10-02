@@ -62,7 +62,7 @@ pipeline {
                 echo 'executing bat command'
                 bat '''
                     @echo off
-                    dir
+                    dir /b /s
                     pause
                     '''
                 echo 'bat command executed'
