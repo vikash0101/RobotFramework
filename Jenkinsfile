@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Copy Git Repo'){
             steps{
-                echo 'Copy Git Repo'
-                sh 'mkdir -p my_new_directory'
+                echo 'create a new repo'
+                sh "mkdir -p my_new_directory"
                 echo 'created my_new_directory'
                 script{
                     def currentDir = pwd()
