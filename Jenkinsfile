@@ -26,6 +26,9 @@ pipeline {
             steps{
                 echo 'Copy Git Repo'
                 sh 'mkdir -p my_new_directory'
+                echo 'created my_new_directory'
+                def currentDir = pwd()
+                echo "Current directory: ${currentDir}"                
                 sh 'cp -R RobotFramework/ my_new_directory/'
                 sh 'ls -la'
                 echo 'done'
