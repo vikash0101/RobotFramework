@@ -12,8 +12,8 @@ pipeline {
                     echo "Git project clone is success"
                     def currentDir = pwd()
                     echo "Current directory: ${currentDir}"
-                    ls -la
-                    echo 'listed'
+                    // ls -la
+                    // echo 'listed'
                     // mkdir -p my_new_directory
                     // echo 'my_new_directory created'
                     // def currentDir = pwd()
@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Copy Git Repo'){
             steps{
+                echo 'Copy Git Repo'
                 sh 'mkdir -p my_new_directory'
                 sh 'cp -R RobotFramework/ my_new_directory/'
                 sh 'ls -la'
