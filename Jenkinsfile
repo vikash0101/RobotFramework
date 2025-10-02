@@ -58,7 +58,7 @@ pipeline {
         }
         stage('InsideRobotFramework'){
             steps{
-                dir('RobotFrameork/my_new_directory/RobotFramework'){
+                dir('RobotFrameork/my_new_directory'){
                 echo 'executing bat command'
                 bat '''
                     dir
