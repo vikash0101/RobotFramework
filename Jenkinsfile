@@ -61,9 +61,7 @@ pipeline {
                 dir('RobotFrameork/my_new_directory/RobotFramework'){
                 echo 'executing bat command'
                 bat '''
-                    @echo off
-                    dir /b /s
-                    pause
+                    dir
                     '''
                 echo 'bat command executed'
                 }
