@@ -7,10 +7,10 @@ pipeline {
                     def currentDir = pwd()
                     echo "Current directory is: ${currentDir}"
                 }
-                echo 'mkdir -p my_new_directory'
+                echo 'mkdir -p directory'
                 //sh "mkdir -p my_new_directory"
                 //sh 'echo "Current directory from shell: $(pwd)"'
-                dir('my_new_directory'){
+                dir('directory'){
                     git(url: 'https://github.com/vikash0101/RobotFramework.git/', 
                     branch: 'main',
                     credentialsId: 'myToken')
@@ -21,7 +21,7 @@ pipeline {
                     echo "Current directory is: ${currentDir}"
                 }
                 }
-                sh 'echo "Current directory from shell: $(pwd)"'
+                //sh 'echo "Current directory from shell: $(pwd)"'
                 // script {
                 //     //sh "mkdir -p my_new_directory"
                 //     dir('my_new_directory'){
@@ -45,14 +45,23 @@ pipeline {
         stage('Copy Git Repo'){
             steps{
                 echo 'create a new repo'
-                sh "mkdir -p my_new_directory"
-                echo 'created my_new_directory'
-                script{
+                dir('my_new_directory'){
+                    script{
                     def currentDir = pwd()
-                    echo "Current directory: ${currentDir}"                
-                    sh "cp -Rp RobotFramework/* my_new_directory/"
-                    sh "ls -la"
-                    echo 'done'
+                    echo "Current directory is: ${currentDir}"
+                    cp -Rp directory/* my_new_directory/
+                    }
+                }
+
+
+                // sh "mkdir -p my_new_directory"
+                // echo 'created my_new_directory'
+                // script{
+                //     def currentDir = pwd()
+                //     echo "Current directory: ${currentDir}"                
+                //     sh ""
+                //     sh "ls -la"
+                //     echo 'done'
                 }
             }
         }
