@@ -1,8 +1,12 @@
 pipeline {
-    agent {label 'Linux'}
+    agent any
     stages {
         stage('Fetch git Project') {
             steps {
+                script {
+                    def currentDir = pwd()
+                    echo "Current directory is: ${currentDir}"
+                }
                 echo 'mkdir -p my_new_directory'
                 //sh "mkdir -p my_new_directory"
                 sh 'echo "Current directory from shell: $(pwd)"'
@@ -11,7 +15,11 @@ pipeline {
                     branch: 'main',
                     credentialsId: 'myToken')
                     echo "Git project clone is success"
-                    sh 'echo "Current directory from shell: $(pwd)"'
+                    //sh 'echo "Current directory from shell: $(pwd)"'
+                    script {
+                    def currentDir = pwd()
+                    echo "Current directory is: ${currentDir}"
+                }
                 }
                 sh 'echo "Current directory from shell: $(pwd)"'
                 // script {
