@@ -24,9 +24,9 @@ pipeline {
         }
         stage('Copy Git Repo'){
             steps{
-                sh mkdir -p my_new_directory
+                sh 'mkdir -p my_new_directory'
                 sh 'cp -R RobotFramework/ my_new_directory/'
-                sh ls -la
+                sh 'ls -la'
                 echo 'done'
             }
         }
