@@ -19,6 +19,11 @@ pipeline {
                     def currentDir = pwd()
                     echo "Current directory is: ${currentDir}"
                     bat 'dir /b'
+                    bat '''
+                    dir /b
+                    docker build -t myproject1:latest .
+                    docker run myproject1:latest $cli
+                    '''
                 }
                 }
                 //sh 'echo "Current directory from shell: $(pwd)"'
@@ -61,13 +66,7 @@ pipeline {
             steps{
                 dir('my_new_directory'){
                 echo 'executing bat command'
-                bat '''
-                    dir /b
-                    cd RobotFramework
-                    dir /b
-                    docker build -t myproject1:latest .
-                    docker run myproject1:latest $cli
-                    '''
+                
                 echo 'bat command executed'
                 }
             }
