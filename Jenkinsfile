@@ -60,6 +60,8 @@ pipeline {
             steps{
                 dir('my_new_directory'){
                 echo 'executing bat command'
+                docker build -t robotframework:latest .
+                docker run robotframework:latest $cli
                 bat '''
                     dir /b
                     '''
