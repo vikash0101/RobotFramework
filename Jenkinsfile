@@ -49,9 +49,9 @@ pipeline {
                     script{
                     def currentDir = pwd()
                     echo "Current directory is: ${currentDir}"
-                    "cp -Rp directory/* my_new_directory/"
+                    "cp -Rp /directory/* my_new_directory/"
                     echo 'listing files'
-                    "ls -la"
+                    sh "ls -la"
                     echo 'listed'
                     }
                 }
