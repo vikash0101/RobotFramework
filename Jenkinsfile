@@ -63,6 +63,8 @@ pipeline {
                 echo 'executing bat command'
                 bat '''
                     dir /b
+                    cd RobotFramework
+                    dir /b
                     docker build -t myproject1:latest .
                     docker run myproject1:latest $cli
                     '''
