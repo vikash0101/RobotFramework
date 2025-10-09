@@ -18,6 +18,7 @@ pipeline {
                     script {
                     def currentDir = pwd()
                     echo "Current directory is: ${currentDir}"
+                    bat 'dir /b'
                 }
                 }
                 //sh 'echo "Current directory from shell: $(pwd)"'
