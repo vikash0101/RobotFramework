@@ -22,7 +22,6 @@ RUN apt --fix-broken install
 #     rm -rf /var/lib/apt/lists/*
 # Download the Google Chrome stable .deb package
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 # Install Google Chrome from the downloaded .deb package
 # apt-get install -y ./package.deb automatically handles dependencies
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
